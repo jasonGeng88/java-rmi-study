@@ -34,3 +34,6 @@ Java Remote Method Invocation (RMI)为java远程调用中的最简单机制，�
 * java.rmi.server.useCodebaseOnly：默认为true, 表示仅依赖当前的codebase
 * java.rmi.server.hostname：服务端对外的访问地址
 * java.security.policy：资源动态下载的权限控制
+
+## 参考
+[https://docs.oracle.com/javase/tutorial/rmi/](https://docs.oracle.com/javase/tutorial/rmi/)
