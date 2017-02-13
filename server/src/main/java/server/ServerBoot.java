@@ -28,7 +28,13 @@ public class ServerBoot {
 
         Compute hello = new ComputeEngine();
         Remote stub = UnicastRemoteObject.exportObject(hello, 0);
-        Registry registry = LocateRegistry.getRegistry(REGISTRY_PORT);
+
+        /**
+         * 内部创建RMI Registry,若无引用外部资源,可无需设置java.rmi.server.codebase (因为它共享server中的资源)
+         * 外部创建RMI Registry （rmiregistry -J-Djava.rmi.server.useCodebaseOnly=false &）
+         * 设置java.rmi.server.useCodebaseOnly=false （默认为true, 表示仅依赖当前的codebase. 如需使用外部（client or server）的codebase, 需把此参数设为false）
+         */
+        Registry registry = LocateRegistry.createRegistry(REGISTRY_PORT);
         //采用相对路径注册远程对象
         registry.rebind(REMOTE_NAME, stub);
 

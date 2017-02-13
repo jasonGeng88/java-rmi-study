@@ -1,7 +1,6 @@
 package client;
 
 import remote.Compute;
-import remote.Task;
 
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
@@ -22,10 +21,10 @@ public class ClientBoot {
             System.setSecurityManager(new SecurityManager());
         }
         try {
-            Task task = new client.HelloWorldTask();
+            HelloWorldTask task = new client.HelloWorldTask();
             Registry registry = LocateRegistry.getRegistry(REGISTRY_PORT);
             Compute compute = (Compute) registry.lookup(REMOTE_NAME);
-            String res = (String) compute.run(task);
+            String res = compute.run(task);
             System.out.println("The result is " + res);
         } catch (NotBoundException e){
             e.printStackTrace();
