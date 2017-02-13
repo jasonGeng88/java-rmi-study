@@ -37,3 +37,4 @@ Java Remote Method Invocation (RMI)为java远程调用中的最简单机制，�
 
 ## 参考
 [https://docs.oracle.com/javase/tutorial/rmi/](https://docs.oracle.com/javase/tutorial/rmi/)
+[http://docs.oracle.com/javase/6/docs/technotes/guides/rmi/codebase.html#sixStepC](http://docs.oracle.com/javase/6/docs/technotes/guides/rmi/codebase.html#sixStepC)
